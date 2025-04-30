@@ -40,25 +40,51 @@ function reverseCharacter(word){
 
 findOftenNumber
 
-firstArray = [23, 1, 2, 3, 4, 5, 23, 12, 13, 52, 23]
+firstArray = [23, 1, 2, 3, 4, 1, 1, 5, 23, 12, 13, 52, 23]
 
 function findOftenNumber(array){
-    objet = {}
-    maxCount = 0
+    let objet = {}
+    let maxCount = 0
+    let result = []
 
     array.forEach(element => {
         objet[element] = (objet[element] || 0) +1;
 
         if(objet[element] > maxCount){
-            maxCount = element;
+            maxCount = objet[element];
         }
     });
 
-    console.log(maxCount)
+    for(element in objet){
+        if(objet[element] === maxCount){
+            result.push(Number(element))
+        }
+    }
+
+    console.log(result)
 }
 
-findOftenNumber(firstArray)
+// findOftenNumber(firstArray)
 
 
 // ------------------------------------- deleteDuplicate ---------------------------------------------------
 
+
+let arrayDuplicate = ["pomme", "kiwi", "raisin", "kiwi"] 
+
+    let duplicateObjet = {}
+    let arrayWhitoutDuplicate = []
+
+function deleteDuplicate(){
+    arrayDuplicate.forEach(element => {
+        duplicateObjet[element] = (duplicateObjet[element] || true) 
+        arrayWhitoutDuplicate = Object.keys(duplicateObjet)
+    });
+
+    console.log(arrayWhitoutDuplicate)
+}
+
+// deleteDuplicate()
+
+
+// ------------------------------------- sortwithoutsortmethod ---------------------------------------------------
