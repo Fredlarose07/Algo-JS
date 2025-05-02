@@ -43,25 +43,28 @@ findOftenNumber
 firstArray = [23, 1, 2, 3, 4, 1, 1, 5, 23, 12, 13, 52, 23]
 
 function findOftenNumber(array){
-    let objet = {}
+
+    let obj = {}
     let maxCount = 0
     let result = []
 
     array.forEach(element => {
-        objet[element] = (objet[element] || 0) +1;
-
-        if(objet[element] > maxCount){
-            maxCount = objet[element];
+        obj[element] = (obj[element] || 0) +1
+        
+        if(obj[element] >= maxCount){
+            maxCount = obj[element]
         }
+            
     });
 
-    for(element in objet){
-        if(objet[element] === maxCount){
-            result.push(Number(element))
+    for(element in obj){
+        if(maxCount == obj[element]){
+        result.push(Number(element))
         }
     }
 
     console.log(result)
+
 }
 
 // findOftenNumber(firstArray)
@@ -93,28 +96,47 @@ function deleteDuplicate(){
 let randomArray = [12, 32, 1, 34, 23, 35, 1, 50]
 
 function sort(array){
-    
+
     for(let j = 0; j < array.length; j++){
 
         for(let i = 0; i < array.length -1; i++){
-
-            console.log(array[i], array[i +1])
-
+        
             if(array[i] > array[i +1]){
                 let temp = array[i]
                 array[i] = array[i +1]
-                array[i +1] = temp;
+                array[i +1] = temp
             }
-
-            
-        } 
-
-        console.log(array)
-
-
+        }
     }
     
+    console.log(array)
 
     }
 
-sort(randomArray)
+// sort(randomArray)
+
+// ------------------------------------- withsortmethod ---------------------------------------------------
+
+
+let fruits = ["pomme", "poire", "raisin", "abricot"]
+let randomArrNumber = [3, 1, 10, 2]
+let randomArrObj = [
+    {name: "Franklin", age: 24},
+    {name: "Anna", age: 16},
+    {name: "Ben", age: 35}
+]
+
+// fruits.sort()
+// console.log(fruits)
+
+// randomArrNumber.sort((a, b) => a - b)
+// console.log(randomArrNumber)
+
+// randomArrObj.sort((a, b) => a.age - b.age)
+// console.log(randomArrObj)
+
+// ------------------------------------- sortwithoutsortmethod ---------------------------------------------------
+
+
+
+
