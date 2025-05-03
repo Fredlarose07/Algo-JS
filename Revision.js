@@ -138,5 +138,23 @@ let randomArrObj = [
 // ------------------------------------- sortwithoutsortmethod ---------------------------------------------------
 
 
+function target(target){
+
+    let saveTarget = target
+    target = target -1
+
+    for(i = 1; i < target+ 1; i++){
+
+        if(i + target == saveTarget){
+            console.log(i + " et " + target + " sont des paires")
+        }
+
+        target--
+    }
+
+}
+
+target(14);
+
 
 
